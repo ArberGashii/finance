@@ -1,12 +1,14 @@
-import { LuLayoutDashboard } from "react-icons/lu";
-import { MdOutlineDashboardCustomize } from "react-icons/md";
-import { CiUser } from "react-icons/ci";
+import {
+  AppstoreAddOutlined,
+  UserOutlined,
+  AppstoreOutlined,
+} from "@ant-design/icons";
 
 export const routes = [
-  { path: "/", Icon: LuLayoutDashboard, name: "Dashboard" },
+  { path: "/", Icon: AppstoreOutlined, name: "Dashboard" },
   {
     path: "/add-shipment",
-    Icon: MdOutlineDashboardCustomize,
+    Icon: AppstoreAddOutlined,
     name: "Add new shipment",
   },
 ];
@@ -14,7 +16,7 @@ export const routes = [
 export const settingsRoutes = [
   {
     path: "/account",
-    Icon: CiUser,
+    Icon: UserOutlined,
     name: "Account",
   },
 ];

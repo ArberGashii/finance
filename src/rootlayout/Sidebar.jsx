@@ -15,7 +15,7 @@ const Sidebar = () => {
             key={name}
             className="text-gray-600 font-medium flex items-center gap-3 px-2 py-3 rounded-md cursor-pointer hover:bg-[#f3f5ff] transition-all"
           >
-            <Icon size={20} />
+            <Icon className="text-xl" />
             {name}
           </div>
         ))}
