@@ -11,14 +11,14 @@ const AddShipment = lazy(() =>
 );
 
 const pathConstants = {
-  dashboard: "/",
-  addShipment: "/add-shipment",
+  dashboard: "/finance/",
+  addShipment: "/finance/add-shipment",
 };
 
 export const routes = [
-  { path: "/", Icon: AppstoreOutlined, name: "Dashboard" },
+  { path: "/finance/", Icon: AppstoreOutlined, name: "Dashboard" },
   {
-    path: "/add-shipment",
+    path: "/finance/add-shipment",
     Icon: AppstoreAddOutlined,
     name: "Add new shipment",
   },
@@ -26,7 +26,7 @@ export const routes = [
 
 export const settingsRoutes = [
   {
-    path: "/account",
+    path: "/finance/account",
     Icon: UserOutlined,
     name: "Account",
   },

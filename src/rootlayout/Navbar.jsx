@@ -6,7 +6,8 @@ const Navbar = () => {
 
   const directory = useMemo(() => {
     const merge = [...routes, ...settingsRoutes];
-    const matched = merge?.find(({ path }) => path === pathname)?.name || "";
+    const matched =
+      merge?.find(({ path }) => path.includes(pathname))?.name || "";
     return matched;
   }, [pathname]);
 

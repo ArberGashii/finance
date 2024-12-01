@@ -14,10 +14,7 @@ const App = () => {
   return (
     <Routes>
       <Route element={<RootLayout />}>
-        <Route
-          path="/finance"
-          element={<Navigate to={appRoutes[0]} replace />}
-        />
+        <Route path="/" element={<Navigate to={appRoutes[0]} replace />} />
         {appRoutes.map(({ path, Element }) => (
           <Route
             key={path}
