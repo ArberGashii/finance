@@ -179,7 +179,7 @@ const Dashboard = () => {
         />
       </div>
 
-      <div className="flex items-center justify-center bg-white drop-shadow-sm rounded-md py-1">
+      <div className="border flex items-center justify-center bg-white drop-shadow-sm rounded-md py-1">
         Showing ({filteredShipments.length} filtered shipments) of (
         {shipments.length} total shipments)
       </div>
@@ -194,7 +194,7 @@ const Dashboard = () => {
             rowData={[...filteredShipments, ...filteredShipmentsAP]}
             shipmentsUpdater={shipmentsUpdater}
           />
-          <div className="bg-white rounded-md drop-shadow-sm p-4">
+          <div className="border bg-white rounded-md drop-shadow-sm p-4 mb-4">
             <LineChart rowData={filteredShipments} />
           </div>
         </>

@@ -26,7 +26,7 @@ const StatsCard = ({
     );
 
   return (
-    <div className="bg-white w-full rounded-md drop-shadow-sm p-4 flex flex-col gap-1">
+    <div className="bg-white w-full rounded-md drop-shadow-sm p-4 flex flex-col gap-1 border">
       <div className="flex justify-between">
         <span>{title}</span>
         {formattedPercentage}

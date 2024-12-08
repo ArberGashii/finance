@@ -16,7 +16,7 @@ const Sidebar = ({ showSider = false }) => {
 
   return (
     <div
-      className={`bg-white w-[340px] flex-col p-4 justify-between h-screen ${
+      className={`bg-white w-[340px] flex-col p-4 justify-between h-screen border ${
         showSider ? "flex" : "hidden"
       } md:block lg:block`}
     >
