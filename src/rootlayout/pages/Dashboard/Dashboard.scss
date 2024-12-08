@@ -1,0 +1,23 @@
+.custom-timeline {
+  .ant-timeline-item {
+    padding-bottom: 10px;
+
+    &.ant-timeline-item-last {
+      height: 8px;
+    }
+
+    .ant-timeline-item-content {
+      font-size: 14px;
+      font-weight: 500;
+      color: #4b5563; // Tailwind slate-600
+    }
+  }
+
+  .ant-timeline-item-head-green {
+    background-color: #10b981; // Tailwind green-500
+  }
+
+  .ant-timeline-item-head-blue {
+    background-color: #3b82f6; // Tailwind blue-500
+  }
+}

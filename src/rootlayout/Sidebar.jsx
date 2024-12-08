@@ -1,9 +1,11 @@
 import { useCallback } from "react";
 import { routes, settingsRoutes } from "../routes";
 import { useNavigate } from "react-router-dom";
+import useAuthenticate from "../zustand/useAuth";
 
-const Sidebar = () => {
+const Sidebar = ({ showSider = false }) => {
   const navigate = useNavigate();
+  const logout = useAuthenticate((state) => state.logout);
 
   const handleNavigate = useCallback(
     (path) => {
@@ -13,7 +15,11 @@ const Sidebar = () => {
   );
 
   return (
-    <div className="bg-white w-[280px] flex flex-col p-4 justify-between h-screen">
+    <div
+      className={`bg-white w-[340px] flex-col p-4 justify-between h-screen ${
+        showSider ? "flex" : "hidden"
+      } md:block lg:block`}
+    >
       {/* Header */}
       <div>
         <span className="font-bold text-violet-500 text-xl">HR.MGMT</span>
@@ -45,7 +51,10 @@ const Sidebar = () => {
 
           return (
             <div
-              onClick={() => handleNavigate(path)}
+              onClick={() => {
+                // handleNavigate(path);
+                logout();
+              }}
               key={name}
               className={`${
                 isActive && "bg-[#f3f5ff]"

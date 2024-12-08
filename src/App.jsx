@@ -1,36 +1,55 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
-import { appRoutes } from "./routes";
+import { appRoutes, authRoutes } from "./routes";
 import { Skeleton } from "antd";
+import "./index.css";
 
-// const AuthLayout = lazy(() => import("./AuthLayout/AuthLayout"));
+const AuthLayout = lazy(() => import("./AuthLayout/AuthLayout"));
 const RootLayout = lazy(() => import("./rootlayout/RootLayout"));
 
-const FallBack = () => {
-  return <Skeleton active />;
+export const FallBack = () => {
+  return <Skeleton className="mt-4" active />;
 };
 
 const App = () => {
   return (
-    <Routes>
-      <Route element={<RootLayout />}>
-        <Route path="/" element={<Navigate to={appRoutes[0]} replace />} />
-        {appRoutes.map(({ path, Element }) => (
-          <Route
-            key={path}
-            path={path}
-            element={
-              <Suspense fallback={<FallBack />}>
-                <Element />
-              </Suspense>
-            }
-          />
-        ))}
-      </Route>
-    </Routes>
-  );
+    <>
+      {/* public routes */}
+      <Routes>
+        <Route element={<AuthLayout />}>
+          {authRoutes.map(({ path, Element }) => (
+            <Route
+              key={path}
+              path={path}
+              element={
+                <Suspense fallback={<FallBack />}>
+                  <Element />
+                </Suspense>
+              }
+            />
+          ))}
+        </Route>
+      </Routes>
 
-  // <RootLayout />;
+      {/*  protected routes */}
+      <Routes>
+        <Route element={<RootLayout />}>
+          <Route path="/" element={<Navigate to={appRoutes[0]} replace />} />
+          {appRoutes.map(({ path, Element }) => (
+            <Route
+              key={path}
+              path={path}
+              element={
+                <Suspense fallback={<FallBack />}>
+                  <Element />
+                </Suspense>
+              }
+            />
+          ))}
+        </Route>
+      </Routes>
+    </>
+  );
 };
 
 export default App;

@@ -1,0 +1,65 @@
+export const kosovaCities = [
+  { label: "Prishtina", value: "Prishtina" },
+  { label: "Prizren", value: "Prizren" },
+  { label: "Gjilan", value: "Gjilan" },
+  { label: "Peja", value: "Peja" },
+  { label: "Ferizaj", value: "Ferizaj" },
+  { label: "Mitrovica", value: "Mitrovica" },
+  { label: "Gjakova", value: "Gjakova" },
+  { label: "Vushtrri", value: "Vushtrri" },
+  { label: "Suhareka", value: "Suhareka" },
+  { label: "Podujeva", value: "Podujeva" },
+  { label: "Skenderaj", value: "Skenderaj" },
+  { label: "Deqan", value: "Deqan" },
+  { label: "Graqanice", value: "Graqanice" },
+  { label: "Malishev", value: "Malishev" },
+  { label: "Lipjan", value: "Lipjan" },
+  { label: "Drenas", value: "Drenas" },
+  { label: "Tetovë", value: "Tetovë" },
+  { label: "Strpc", value: "Strpc" },
+  { label: "Fushekosove", value: "Fushekosove" },
+  { label: "Hani i Elezit", value: "Hani i Elezit" },
+  { label: "Kamenice", value: "Kamenice" },
+  { label: "Viti", value: "Viti" },
+  { label: "Shtime", value: "Shtime" },
+  { label: "Rahovec", value: "Rahovec" },
+  { label: "Dragash", value: "Dragash" },
+  { label: "Kline", value: "Kline" },
+  { label: "Obiliq", value: "Obiliq" },
+  { label: "Kacanik", value: "Kacanik" },
+];
+
+export const category = [
+  "trenerka komplet",
+  "trenerka te poshta",
+  "trenerke e nalte",
+  "maice",
+  "duks",
+];
+
+export const colors = [
+  "Light Gray",
+  "Light Red",
+  "Black",
+  "White and black",
+  "White",
+  "Red and black",
+];
+export const typeOfProduct = [
+  "Trapstar",
+  "Jordan",
+  "Nike empty",
+  "Hoodrich",
+  "Nike letter",
+  "DG/MILANO",
+  "North Face w/hoodie",
+  "La Costa",
+  "Nike w/hoodie",
+  "LV",
+  "hugo",
+  "stone island",
+  "Puma",
+  "Mercedes",
+];
+export const availableSizes = ["S", "M", "L", "XL", "XXL"];
+export const statuses = ["awaiting pickup", "delivered", "refused"];
