@@ -181,8 +181,8 @@ const Dashboard = () => {
 
       <Divider>Shipments</Divider>
       <div className="text-center border flex items-center justify-center bg-white drop-shadow-sm rounded-md py-1">
-        Showing ({filteredShipments.length} filtered shipments) of (
-        {shipments.length} total shipments)
+        Showing ({[...filteredShipments, ...filteredShipmentsAP].length}{" "}
+        filtered shipments) of ({shipments.length} total shipments)
       </div>
 
       {loadingShipments ? (

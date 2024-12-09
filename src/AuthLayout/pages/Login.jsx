@@ -30,14 +30,8 @@ const Login = () => {
       });
   };
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      {/* Logo */}
-      <div className="absolute top-10 flex justify-center w-full">
-        <h1 className="font-bold text-3xl text-blue-600">HR.MGMT</h1>
-      </div>
-
-      {/* Login Container */}
-      <div className="bg-white drop-shadow-2xl rounded-lg w-96 p-8 mt-24">
+    <div className="flex items-center justify-center min-h-screen bg-[#f9faff]">
+      <div className="bg-white drop-shadow-2xl rounded-lg w-96 p-8 border">
         <div className="font-bold text-3xl text-center mb-6">Login</div>
         <Form onFinish={handleFinish} layout="vertical" className="space-y-6">
           {/* Email Input */}

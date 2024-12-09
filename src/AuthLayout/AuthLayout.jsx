@@ -9,11 +9,7 @@ const AuthLayout = () => {
     return <FallBack />;
   }
   if (!currentUser) {
-    return (
-      <section className="flex flex-1 justify-center items-center flex-col h-screen">
-        <Outlet />
-      </section>
-    );
+    return <Outlet />;
   }
   return currentUser ? (
     <Navigate to="/finance/" />

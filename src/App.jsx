@@ -1,14 +1,14 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import { appRoutes, authRoutes } from "./routes";
-import { Skeleton } from "antd";
+import { Spin } from "antd";
 import "./index.css";
 
 const AuthLayout = lazy(() => import("./AuthLayout/AuthLayout"));
 const RootLayout = lazy(() => import("./rootlayout/RootLayout"));
 
 export const FallBack = () => {
-  return <Skeleton className="mt-4" active />;
+  return <Spin fullscreen />;
 };
 
 const App = () => {
