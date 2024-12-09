@@ -36,14 +36,16 @@ export const filterShipmentsByPeriod = (shipments, period) => {
   const now = dayjs();
   let startDate, endDate;
 
+  // Check if the period is a custom range array
   if (Array.isArray(period) && period.length === 2) {
     startDate = dayjs(period[0]);
-    endDate = dayjs(period[1]);
+    endDate = dayjs(period[1]).endOf("day"); // Include the end of the day for the range
     return shipments.filter((shipment) =>
       dayjs(shipment.updatedAt).isBetween(startDate, endDate, null, "[]")
     );
   }
 
+  // Define start and end dates based on the period keyword
   switch (period) {
     case "Daily":
       startDate = now.startOf("day");
@@ -75,6 +77,7 @@ export const filterShipmentsByPeriod = (shipments, period) => {
       return []; // Return empty if the period is invalid
   }
 
+  // Filter the shipments within the defined range
   return shipments.filter((shipment) =>
     dayjs(shipment.updatedAt).isBetween(startDate, endDate, null, "[]")
   );
@@ -129,14 +132,11 @@ export const returnPercentageOfSales = (
 ) => {
   if (typeof currentPeriod !== "string") {
     const totalSales = sumShipmentsCodByStatus(allData, key);
-    console.log({ totalSales });
 
     const toReturn = (currentPeriodCod / totalSales) * 100;
-    console.log({ toReturn });
 
     return toReturn.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
-  console.log({ currentPeriodCod, currentPeriod, allData, key });
 
   const periodToCompare = cooperationPeriods[currentPeriod];
   const periodToCompareFiltered = filterShipmentsByPeriod(
@@ -147,8 +147,6 @@ export const returnPercentageOfSales = (
   const periodToCompareFilteredCod = periodToCompareFiltered.length
     ? sumShipmentsCodByStatus(periodToCompareFiltered, key)
     : 1;
-
-  console.log({ currentPeriodCod, periodToCompareFilteredCod });
 
   const toReturn =
     ((currentPeriodCod - periodToCompareFilteredCod) /

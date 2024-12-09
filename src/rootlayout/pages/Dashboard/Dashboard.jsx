@@ -2,7 +2,7 @@ import StatsCard from "../../../components/Card/StatsCard";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { sumShipmentsCodByStatus } from "../../../functions/sumShipmentsCodByStatus";
 import { sumShipmentsByStatus } from "../../../functions/shipmentsFunctions";
-import { DatePicker, Segmented, Skeleton } from "antd";
+import { DatePicker, Divider, Segmented, Skeleton } from "antd";
 import { useShipmentsState } from "../../../zustand/useShipmentsState";
 import {
   filterShipmentsByPeriod,
@@ -179,10 +179,11 @@ const Dashboard = () => {
         />
       </div>
 
-      <div className="border flex items-center justify-center bg-white drop-shadow-sm rounded-md py-1">
+      <div className="text-center border flex items-center justify-center bg-white drop-shadow-sm rounded-md py-1">
         Showing ({filteredShipments.length} filtered shipments) of (
         {shipments.length} total shipments)
       </div>
+      <Divider>Shipments</Divider>
 
       {loadingShipments ? (
         <div className="w-full">
@@ -194,6 +195,7 @@ const Dashboard = () => {
             rowData={[...filteredShipments, ...filteredShipmentsAP]}
             shipmentsUpdater={shipmentsUpdater}
           />
+          <Divider>Chart</Divider>
           <div className="border bg-white rounded-md drop-shadow-sm p-4 mb-4">
             <LineChart rowData={filteredShipments} />
           </div>

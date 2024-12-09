@@ -9,9 +9,9 @@ const RootLayout = () => {
   return currentUser ? (
     <section className="h-screen bg-[#f9faff] flex text-gray-900">
       <Sidebar />
-      <div className="flex flex-col mx-4 mt-4 lg:mt-8 gap-4 w-full">
+      <div className="flex flex-col gap-4 w-full">
         <Navbar />
-        <div className={`overflow-auto`}>
+        <div className={`overflow-auto mx-4`}>
           <Outlet />
         </div>
       </div>

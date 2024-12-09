@@ -33,8 +33,8 @@ const rules = [{ required: true, message: "This field is required" }];
 
 const initialValues = {
   status: "",
-  // createdAt: Date.now(),
-  // updatedAt: Date.now(),
+  createdAt: Date.now(),
+  updatedAt: Date.now(),
   city: "",
   country: "Kosova",
   address: "",
@@ -43,8 +43,8 @@ const initialValues = {
   products: [{ cod: 0, cop: 0, color: "", category: "", type: "", size: "" }],
   xId: "",
   receiverUserName: "",
-  createdAt: dayjs(),
-  updatedAt: dayjs(),
+  // createdAt: dayjs(),
+  // updatedAt: dayjs(),
 };
 
 const AddShipments = ({
@@ -69,14 +69,20 @@ const AddShipments = ({
           email: currentUser.email,
         },
         isPaid: false,
-        createdAt: values.createdAt ? values.createdAt.valueOf() : Date.now(),
-        updatedAt: values.updatedAt ? values.updatedAt.valueOf() : Date.now(),
+        // createdAt: values.createdAt ? values.createdAt.valueOf() : Date.now(),
+        // updatedAt: values.updatedAt ? values.updatedAt.valueOf() : Date.now(),
+        createdAt: Date.now(),
+        updatedAt: Date.now(),
       };
 
       try {
-        (await edit)
-          ? put("shipments", { ...proceedValues, id: edit.id })
-          : post("shipments", proceedValues);
+        edit
+          ? await put("shipments", {
+              ...proceedValues,
+              id: edit.id,
+              updatedAt: Date.now(),
+            })
+          : await post("shipments", proceedValues);
         edit ? setEdit(false) : navigate("/finance/");
         edit && shipmentsUpdater("edit", { ...proceedValues, id: edit.id });
         message.success("shipments added successful");
@@ -157,7 +163,7 @@ const AddShipments = ({
             <Input placeholder="Enter Receiver User Name..." />
           </Item>
         </div>
-        <Item name="createdAt" label={createLabel("Created At")}>
+        {/* <Item name="createdAt" label={createLabel("Created At")}>
           <DatePicker
             format={{
               format: "YYYY-MM-DD",
@@ -173,7 +179,7 @@ const AddShipments = ({
               type: "mask",
             }}
           />
-        </Item>
+        </Item> */}
 
         <Item rules={rules} name="phone" label={createLabel("Phone")}>
           <InputNumber
