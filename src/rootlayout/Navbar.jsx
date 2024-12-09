@@ -19,11 +19,11 @@ const Navbar = () => {
   }, [pathname]);
 
   return (
-    <div className="flex justify-between items-center border p-2 bg-white">
+    <div className="flex justify-between items-center border-b p-2 px-4 bg-white">
       <div className="font-bold text-3xl">{directory}</div>
       {/* Hide MenuOutlined on large screens */}
       <MenuOutlined
-        className="lg:hidden cursor-pointer text-xl"
+        className="lg:hidden cursor-pointer text-2xl"
         onClick={() => setOpenSider(true)}
       />
       <Drawer
