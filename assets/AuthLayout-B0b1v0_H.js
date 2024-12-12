@@ -1,0 +1,1 @@
+import{j as t,F as n,O as a,N as o}from"./index-CHmusvUx.js";import{u as r}from"./useAuth-CpcLrSD1.js";const f=()=>{const s=r(e=>e.currentUser);return r(e=>e.loading)?t.jsx(n,{}):s?s?t.jsx(o,{to:"/finance/"}):t.jsx("section",{className:"bg-[#f9faff] h-screen flex flex-col",children:t.jsx(a,{})}):t.jsx(a,{})};export{f as default};
