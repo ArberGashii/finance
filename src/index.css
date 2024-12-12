@@ -3,8 +3,17 @@
 @tailwind utilities;
 
 ::-webkit-scrollbar {
-  display: none;
-  /* width: 5px;
-  border-radius: 10px;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3); */
+  width: 10px; /* Width of the scrollbar */
+  height: 12px; /* Height of the horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f3f5ff;
+  border-radius: 10px; /* Rounded corners for the track */
+  border: 1px solid #f0f0f0; /* Space between thumb and track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: white; /* Gradient for the thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
 }

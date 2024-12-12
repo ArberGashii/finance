@@ -7,6 +7,7 @@ import Sidebar from "./Sidebar";
 
 const Navbar = () => {
   const { pathname } = useLocation();
+
   const [openSider, setOpenSider] = useState(false);
   const directory = useMemo(() => {
     const matched = routes?.find(({ path }) => path === pathname)?.name || "";
@@ -19,7 +20,7 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-between items-center border-b p-2 px-4 bg-white">
-      <div className="font-medium text-2xl md:font-bold md:text-3xl lg:font-bold lg:text-3xl">
+      <div className="font-medium text-2xl md:font-bold md:text-3xl lg:font-bold lg:text-[24.5px] text-[#505050]">
         {directory}
       </div>
       {/* Hide MenuOutlined on large screens */}

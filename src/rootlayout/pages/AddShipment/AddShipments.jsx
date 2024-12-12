@@ -130,7 +130,7 @@ const AddShipments = ({
             <Input placeholder="Enter X-ID..." />
           </Item>
           <Item rules={rules} name="country" label={createLabel("Country")}>
-            <Input disabled placeholder="Enter country..." />
+            <Input placeholder="Enter country..." />
           </Item>
         </div>
 

@@ -60,6 +60,7 @@ export const typeOfProduct = [
   "stone island",
   "Puma",
   "Mercedes",
+  "Tech",
 ];
 export const availableSizes = ["S", "M", "L", "XL", "XXL"];
 export const statuses = ["awaiting pickup", "delivered", "refused"];
